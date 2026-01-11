@@ -1,0 +1,1213 @@
+{
+  "duration_ms": 43000,
+  "plan_start_ms": 1200,
+  "targets": [
+    {
+      "name": "macos-01",
+      "desc": "Mac Studio - Prod",
+      "ssh": "ops@192.168.10.24",
+      "status": "ready",
+      "is_default": true
+    },
+    {
+      "name": "macos-02",
+      "desc": "MacBook Pro - Staging",
+      "ssh": "ops@192.168.10.25",
+      "status": "ready"
+    },
+    {
+      "name": "linux-01",
+      "desc": "Ubuntu VM - CI",
+      "ssh": "ops@10.0.2.15",
+      "status": "ready"
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool-list-targets",
+      "name": "list_targets",
+      "arguments": {},
+      "start": 900,
+      "end": 1300,
+      "result": "macos-01, macos-02, linux-01"
+    },
+    {
+      "id": "tool-cmd-01",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "uname -a",
+        "intent": "Read kernel info",
+        "mode": "shell"
+      },
+      "start": 2000,
+      "end": 4300,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-02",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "uname -a",
+        "intent": "Read kernel info",
+        "mode": "shell"
+      },
+      "start": 2000,
+      "end": 4300,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-03",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "uname -a",
+        "intent": "Read kernel info",
+        "mode": "shell"
+      },
+      "start": 2000,
+      "end": 4300,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-04",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "uptime",
+        "intent": "Check uptime and load",
+        "mode": "shell"
+      },
+      "start": 4600,
+      "end": 6900,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-05",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "uptime",
+        "intent": "Check uptime and load",
+        "mode": "shell"
+      },
+      "start": 4600,
+      "end": 6900,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-06",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "uptime",
+        "intent": "Check uptime and load",
+        "mode": "shell"
+      },
+      "start": 4600,
+      "end": 6900,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-07",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "df -h",
+        "intent": "Check disk usage",
+        "mode": "shell"
+      },
+      "start": 7200,
+      "end": 9500,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-08",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "df -h",
+        "intent": "Check disk usage",
+        "mode": "shell"
+      },
+      "start": 7200,
+      "end": 9500,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-09",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "df -h",
+        "intent": "Check disk usage",
+        "mode": "shell"
+      },
+      "start": 7200,
+      "end": 9500,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-10",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "vm_stat",
+        "intent": "Check memory stats",
+        "mode": "shell"
+      },
+      "start": 9800,
+      "end": 12100,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-11",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "vm_stat",
+        "intent": "Check memory stats",
+        "mode": "shell"
+      },
+      "start": 9800,
+      "end": 12100,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-12",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "free -m",
+        "intent": "Check memory stats",
+        "mode": "shell"
+      },
+      "start": 9800,
+      "end": 12100,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-13",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "whoami",
+        "intent": "Verify user",
+        "mode": "shell"
+      },
+      "start": 12400,
+      "end": 14600,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-14",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "id",
+        "intent": "Verify identity and groups",
+        "mode": "shell"
+      },
+      "start": 14800,
+      "end": 17000,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-15",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "whoami",
+        "intent": "Verify user",
+        "mode": "shell"
+      },
+      "start": 17200,
+      "end": 19400,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-16",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "id",
+        "intent": "Verify identity and groups",
+        "mode": "shell"
+      },
+      "start": 19600,
+      "end": 21800,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-17",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "whoami",
+        "intent": "Verify user",
+        "mode": "shell"
+      },
+      "start": 22000,
+      "end": 24200,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-18",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "id",
+        "intent": "Verify identity and groups",
+        "mode": "shell"
+      },
+      "start": 24400,
+      "end": 26600,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-19",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "tail -n 50 /var/log/system.log",
+        "intent": "Sample system logs",
+        "mode": "shell"
+      },
+      "start": 27000,
+      "end": 30200,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-20",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "tail -n 50 /var/log/system.log",
+        "intent": "Sample system logs",
+        "mode": "shell"
+      },
+      "start": 27000,
+      "end": 30200,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-21",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "tail -n 50 /var/log/syslog",
+        "intent": "Sample system logs",
+        "mode": "shell"
+      },
+      "start": 27000,
+      "end": 30200,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-22",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-01",
+        "command": "netstat -an | head -n 20",
+        "intent": "Check listening ports",
+        "mode": "shell"
+      },
+      "start": 30600,
+      "end": 33800,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-23",
+      "name": "run_command",
+      "arguments": {
+        "target": "macos-02",
+        "command": "netstat -an | head -n 20",
+        "intent": "Check listening ports",
+        "mode": "shell"
+      },
+      "start": 34000,
+      "end": 37200,
+      "result": "exit=0"
+    },
+    {
+      "id": "tool-cmd-24",
+      "name": "run_command",
+      "arguments": {
+        "target": "linux-01",
+        "command": "ss -tulpen | head -n 20",
+        "intent": "Check listening ports",
+        "mode": "shell"
+      },
+      "start": 37400,
+      "end": 40800,
+      "result": "exit=0"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-user-1",
+      "role": "user",
+      "text": "Audit three targets (prod, staging, CI). Run read-only checks and summarize risks.",
+      "start": 0,
+      "end": 0
+    },
+    {
+      "id": "msg-assistant-1",
+      "role": "assistant",
+      "text": "Understood. I will list targets, draft a plan, and run parallel checks with approvals where needed.",
+      "start": 600,
+      "end": 1200,
+      "typing": true
+    },
+    {
+      "id": "msg-tool-1",
+      "role": "assistant",
+      "text": "Listing available targets.",
+      "start": 900,
+      "end": 900,
+      "toolCallIds": ["tool-list-targets"],
+      "blocks": [{ "type": "tool_call", "toolCallId": "tool-list-targets" }]
+    },
+    {
+      "id": "msg-assistant-2",
+      "role": "assistant",
+      "text": "Targets resolved. Starting parallel system checks across macOS and Linux nodes.",
+      "start": 1300,
+      "end": 2000,
+      "typing": true
+    },
+    {
+      "id": "msg-tool-2",
+      "role": "assistant",
+      "text": "Queueing kernel checks in parallel.",
+      "start": 2000,
+      "end": 2000,
+      "toolCallIds": ["tool-cmd-01", "tool-cmd-02", "tool-cmd-03"],
+      "blocks": [
+        { "type": "tool_call", "toolCallId": "tool-cmd-01" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-02" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-03" }
+      ]
+    },
+    {
+      "id": "msg-tool-3",
+      "role": "assistant",
+      "text": "Queueing uptime and load checks.",
+      "start": 4600,
+      "end": 4600,
+      "toolCallIds": ["tool-cmd-04", "tool-cmd-05", "tool-cmd-06"],
+      "blocks": [
+        { "type": "tool_call", "toolCallId": "tool-cmd-04" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-05" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-06" }
+      ]
+    },
+    {
+      "id": "msg-assistant-3",
+      "role": "assistant",
+      "text": "Collecting storage and memory snapshots in parallel.",
+      "start": 7000,
+      "end": 7600,
+      "typing": true
+    },
+    {
+      "id": "msg-tool-4",
+      "role": "assistant",
+      "text": "Disk usage snapshots queued.",
+      "start": 7200,
+      "end": 7200,
+      "toolCallIds": ["tool-cmd-07", "tool-cmd-08", "tool-cmd-09"],
+      "blocks": [
+        { "type": "tool_call", "toolCallId": "tool-cmd-07" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-08" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-09" }
+      ]
+    },
+    {
+      "id": "msg-tool-5",
+      "role": "assistant",
+      "text": "Memory snapshots queued.",
+      "start": 9800,
+      "end": 9800,
+      "toolCallIds": ["tool-cmd-10", "tool-cmd-11", "tool-cmd-12"],
+      "blocks": [
+        { "type": "tool_call", "toolCallId": "tool-cmd-10" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-11" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-12" }
+      ]
+    },
+    {
+      "id": "msg-assistant-4",
+      "role": "assistant",
+      "text": "Moving into sequential identity and policy checks per node.",
+      "start": 12200,
+      "end": 12800,
+      "typing": true
+    },
+    {
+      "id": "msg-tool-6",
+      "role": "assistant",
+      "text": "Identity checks queued for each target.",
+      "start": 12400,
+      "end": 12400,
+      "toolCallIds": [
+        "tool-cmd-13",
+        "tool-cmd-14",
+        "tool-cmd-15",
+        "tool-cmd-16",
+        "tool-cmd-17",
+        "tool-cmd-18"
+      ],
+      "blocks": [
+        { "type": "tool_call", "toolCallId": "tool-cmd-13" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-14" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-15" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-16" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-17" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-18" }
+      ]
+    },
+    {
+      "id": "msg-assistant-5",
+      "role": "assistant",
+      "text": "Sampling logs in parallel. These require manual approval due to sensitivity.",
+      "start": 26400,
+      "end": 27200,
+      "typing": true
+    },
+    {
+      "id": "msg-tool-7",
+      "role": "assistant",
+      "text": "Log samples queued.",
+      "start": 27000,
+      "end": 27000,
+      "toolCallIds": ["tool-cmd-19", "tool-cmd-20", "tool-cmd-21"],
+      "blocks": [
+        { "type": "tool_call", "toolCallId": "tool-cmd-19" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-20" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-21" }
+      ]
+    },
+    {
+      "id": "msg-assistant-6",
+      "role": "assistant",
+      "text": "Checking network listeners sequentially per target.",
+      "start": 30000,
+      "end": 30600,
+      "typing": true
+    },
+    {
+      "id": "msg-tool-8",
+      "role": "assistant",
+      "text": "Network checks queued.",
+      "start": 30600,
+      "end": 30600,
+      "toolCallIds": ["tool-cmd-22", "tool-cmd-23", "tool-cmd-24"],
+      "blocks": [
+        { "type": "tool_call", "toolCallId": "tool-cmd-22" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-23" },
+        { "type": "tool_call", "toolCallId": "tool-cmd-24" }
+      ]
+    },
+    {
+      "id": "msg-assistant-7",
+      "role": "assistant",
+      "text": "Summary: all targets are healthy, storage and memory within expected ranges. Log samples show no critical errors. Network listeners look standard. Recommend routine log rotation and keep CI node disk usage under 70%.",
+      "start": 40000,
+      "end": 42000,
+      "typing": true
+    }
+  ],
+  "plan": [
+    { "content": "List targets and set scope", "start": 1200 },
+    { "content": "Run parallel system checks", "start": 2000 },
+    { "content": "Collect storage and memory snapshots", "start": 7200 },
+    { "content": "Verify identity and access", "start": 12400 },
+    { "content": "Sample logs and network posture", "start": 27000 },
+    { "content": "Summarize findings and risks", "start": 40800 }
+  ],
+  "commands": [
+    {
+      "id": "cmd-01",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Read kernel info",
+      "mode": "shell",
+      "raw_command": "uname -a",
+      "pipeline": [{ "argv": ["uname", "-a"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 2000,
+      "start_at_ms": 3400,
+      "end_at_ms": 4300,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Darwin macos-01 22.6.0 Darwin Kernel Version 22.6.0: root:xnu-8796.141.3~1/RELEASE_X86_64 x86_64",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 2000,
+        "done_at_ms": 3200,
+        "level": "low",
+        "reason": "Reads kernel version metadata only.",
+        "key_points": ["No file writes", "No sensitive data touched"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-02",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Read kernel info",
+      "mode": "shell",
+      "raw_command": "uname -a",
+      "pipeline": [{ "argv": ["uname", "-a"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 2000,
+      "start_at_ms": 3400,
+      "end_at_ms": 4300,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Darwin macos-02 22.5.0 Darwin Kernel Version 22.5.0: root:xnu-8796.121.3~1/RELEASE_ARM64_T6000 arm64",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 2000,
+        "done_at_ms": 3200,
+        "level": "low",
+        "reason": "Reads kernel version metadata only.",
+        "key_points": ["No file writes", "No sensitive data touched"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-03",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Read kernel info",
+      "mode": "shell",
+      "raw_command": "uname -a",
+      "pipeline": [{ "argv": ["uname", "-a"] }],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 2000,
+      "start_at_ms": 3400,
+      "end_at_ms": 4300,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Linux linux-01 5.15.0-83-generic #92-Ubuntu SMP x86_64 GNU/Linux",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 2000,
+        "done_at_ms": 3200,
+        "level": "low",
+        "reason": "Reads kernel version metadata only.",
+        "key_points": ["No file writes", "No sensitive data touched"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-04",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Check uptime and load",
+      "mode": "shell",
+      "raw_command": "uptime",
+      "pipeline": [{ "argv": ["uptime"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 4600,
+      "start_at_ms": 6000,
+      "end_at_ms": 6900,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "10:21  up 3 days,  5:42, 3 users, load averages: 1.05 1.10 1.08",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 4600,
+        "done_at_ms": 5800,
+        "level": "low",
+        "reason": "Reads uptime and load averages only.",
+        "key_points": ["Read-only", "Operational metadata"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-05",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Check uptime and load",
+      "mode": "shell",
+      "raw_command": "uptime",
+      "pipeline": [{ "argv": ["uptime"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 4600,
+      "start_at_ms": 6000,
+      "end_at_ms": 6900,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "10:21  up 2 days,  7:12, 2 users, load averages: 0.72 0.88 0.90",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 4600,
+        "done_at_ms": 5800,
+        "level": "low",
+        "reason": "Reads uptime and load averages only.",
+        "key_points": ["Read-only", "Operational metadata"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-06",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Check uptime and load",
+      "mode": "shell",
+      "raw_command": "uptime",
+      "pipeline": [{ "argv": ["uptime"] }],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 4600,
+      "start_at_ms": 6000,
+      "end_at_ms": 6900,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "10:21:11 up 12 days,  3:54,  2 users,  load average: 0.41, 0.55, 0.63",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 4600,
+        "done_at_ms": 5800,
+        "level": "low",
+        "reason": "Reads uptime and load averages only.",
+        "key_points": ["Read-only", "Operational metadata"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-07",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Check disk usage",
+      "mode": "shell",
+      "raw_command": "df -h",
+      "pipeline": [{ "argv": ["df", "-h"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 7200,
+      "start_at_ms": 8600,
+      "end_at_ms": 9500,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Filesystem   Size   Used  Avail Capacity  Mounted on\n/dev/disk3s1  1.8T   1.1T   650G   63%     /",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 7200,
+        "done_at_ms": 8400,
+        "level": "low",
+        "reason": "Reads filesystem usage only.",
+        "key_points": ["Read-only", "No sensitive content"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-08",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Check disk usage",
+      "mode": "shell",
+      "raw_command": "df -h",
+      "pipeline": [{ "argv": ["df", "-h"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 7200,
+      "start_at_ms": 8600,
+      "end_at_ms": 9500,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Filesystem   Size   Used  Avail Capacity  Mounted on\n/dev/disk1s1  512G   310G   180G   64%     /",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 7200,
+        "done_at_ms": 8400,
+        "level": "low",
+        "reason": "Reads filesystem usage only.",
+        "key_points": ["Read-only", "No sensitive content"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-09",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Check disk usage",
+      "mode": "shell",
+      "raw_command": "df -h",
+      "pipeline": [{ "argv": ["df", "-h"] }],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 7200,
+      "start_at_ms": 8600,
+      "end_at_ms": 9500,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1        80G   52G   25G  68% /",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 7200,
+        "done_at_ms": 8400,
+        "level": "low",
+        "reason": "Reads filesystem usage only.",
+        "key_points": ["Read-only", "No sensitive content"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-10",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Check memory stats",
+      "mode": "shell",
+      "raw_command": "vm_stat",
+      "pipeline": [{ "argv": ["vm_stat"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 9800,
+      "start_at_ms": 11200,
+      "end_at_ms": 12100,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Pages free:                               142389.\nPages active:                             312905.\nPages inactive:                           201433.",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 9800,
+        "done_at_ms": 11000,
+        "level": "low",
+        "reason": "Reads memory counters only.",
+        "key_points": ["Read-only", "No data access"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-11",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Check memory stats",
+      "mode": "shell",
+      "raw_command": "vm_stat",
+      "pipeline": [{ "argv": ["vm_stat"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 9800,
+      "start_at_ms": 11200,
+      "end_at_ms": 12100,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Pages free:                               92341.\nPages active:                             221908.\nPages inactive:                           188721.",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 9800,
+        "done_at_ms": 11000,
+        "level": "low",
+        "reason": "Reads memory counters only.",
+        "key_points": ["Read-only", "No data access"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-12",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Check memory stats",
+      "mode": "shell",
+      "raw_command": "free -m",
+      "pipeline": [{ "argv": ["free", "-m"] }],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 9800,
+      "start_at_ms": 11200,
+      "end_at_ms": 12100,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "              total        used        free      shared  buff/cache   available\nMem:           32000       12840        6900         512       12260       18040",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 9800,
+        "done_at_ms": 11000,
+        "level": "low",
+        "reason": "Reads memory counters only.",
+        "key_points": ["Read-only", "No data access"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-13",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Verify user",
+      "mode": "shell",
+      "raw_command": "whoami",
+      "pipeline": [{ "argv": ["whoami"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 12400,
+      "start_at_ms": 13800,
+      "end_at_ms": 14600,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "ops",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 12400,
+        "done_at_ms": 13600,
+        "level": "low",
+        "reason": "Reads current user identity only.",
+        "key_points": ["Read-only", "No file access"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-14",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Verify identity and groups",
+      "mode": "shell",
+      "raw_command": "id",
+      "pipeline": [{ "argv": ["id"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 14800,
+      "start_at_ms": 16200,
+      "end_at_ms": 17000,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "uid=501(ops) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts)",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 14800,
+        "done_at_ms": 16000,
+        "level": "low",
+        "reason": "Reads identity and group membership.",
+        "key_points": ["Read-only", "No system changes"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-15",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Verify user",
+      "mode": "shell",
+      "raw_command": "whoami",
+      "pipeline": [{ "argv": ["whoami"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 17200,
+      "start_at_ms": 18600,
+      "end_at_ms": 19400,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "ops",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 17200,
+        "done_at_ms": 18400,
+        "level": "low",
+        "reason": "Reads current user identity only.",
+        "key_points": ["Read-only", "No file access"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-16",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Verify identity and groups",
+      "mode": "shell",
+      "raw_command": "id",
+      "pipeline": [{ "argv": ["id"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 19600,
+      "start_at_ms": 21000,
+      "end_at_ms": 21800,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "uid=502(ops) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts)",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 19600,
+        "done_at_ms": 20800,
+        "level": "low",
+        "reason": "Reads identity and group membership.",
+        "key_points": ["Read-only", "No system changes"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-17",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Verify user",
+      "mode": "shell",
+      "raw_command": "whoami",
+      "pipeline": [{ "argv": ["whoami"] }],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 22000,
+      "start_at_ms": 23400,
+      "end_at_ms": 24200,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "ops",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 22000,
+        "done_at_ms": 23200,
+        "level": "low",
+        "reason": "Reads current user identity only.",
+        "key_points": ["Read-only", "No file access"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-18",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Verify identity and groups",
+      "mode": "shell",
+      "raw_command": "id",
+      "pipeline": [{ "argv": ["id"] }],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 24400,
+      "start_at_ms": 25800,
+      "end_at_ms": 26600,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "uid=1001(ops) gid=1001(ops) groups=1001(ops),27(sudo),1002(dev)",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 24400,
+        "done_at_ms": 25600,
+        "level": "low",
+        "reason": "Reads identity and group membership.",
+        "key_points": ["Read-only", "No system changes"],
+        "auto_approved": true
+      }
+    },
+    {
+      "id": "cmd-19",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Sample system logs",
+      "mode": "shell",
+      "raw_command": "tail -n 50 /var/log/system.log",
+      "pipeline": [{ "argv": ["tail", "-n", "50", "/var/log/system.log"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 27000,
+      "start_at_ms": 29000,
+      "end_at_ms": 30200,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Apr 12 10:20:14 macos-01 kernel[0]: Sandbox: denied mach-lookup\nApr 12 10:20:18 macos-01 loginwindow[204]: Screen unlocked\nApr 12 10:20:42 macos-01 com.apple.xpc.launchd[1]: Service exited cleanly",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 27000,
+        "done_at_ms": 28200,
+        "level": "medium",
+        "reason": "Log data can include user or system identifiers.",
+        "key_points": ["Read-only", "Potential sensitive metadata"],
+        "auto_approved": false
+      }
+    },
+    {
+      "id": "cmd-20",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Sample system logs",
+      "mode": "shell",
+      "raw_command": "tail -n 50 /var/log/system.log",
+      "pipeline": [{ "argv": ["tail", "-n", "50", "/var/log/system.log"] }],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 27000,
+      "start_at_ms": 29000,
+      "end_at_ms": 30200,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Apr 12 10:20:09 macos-02 kernel[0]: AirPort: Link Down\nApr 12 10:20:33 macos-02 loginwindow[206]: Screen locked\nApr 12 10:20:55 macos-02 com.apple.xpc.launchd[1]: Service exited cleanly",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 27000,
+        "done_at_ms": 28200,
+        "level": "medium",
+        "reason": "Log data can include user or system identifiers.",
+        "key_points": ["Read-only", "Potential sensitive metadata"],
+        "auto_approved": false
+      }
+    },
+    {
+      "id": "cmd-21",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Sample system logs",
+      "mode": "shell",
+      "raw_command": "tail -n 50 /var/log/syslog",
+      "pipeline": [{ "argv": ["tail", "-n", "50", "/var/log/syslog"] }],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 27000,
+      "start_at_ms": 29000,
+      "end_at_ms": 30200,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Apr 12 10:20:02 linux-01 systemd[1]: Started Session 42\nApr 12 10:20:18 linux-01 kernel: audit: type=1400 apparmor=STATUS\nApr 12 10:20:47 linux-01 systemd[1]: logrotate.service: Deactivated",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 27000,
+        "done_at_ms": 28200,
+        "level": "medium",
+        "reason": "Log data can include user or system identifiers.",
+        "key_points": ["Read-only", "Potential sensitive metadata"],
+        "auto_approved": false
+      }
+    },
+    {
+      "id": "cmd-22",
+      "client": "octovalve-proxy",
+      "target": "macos-01",
+      "peer": "127.0.0.1",
+      "intent": "Check listening ports",
+      "mode": "shell",
+      "raw_command": "netstat -an | head -n 20",
+      "pipeline": [
+        { "argv": ["netstat", "-an"] },
+        { "argv": ["head", "-n", "20"] }
+      ],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 30600,
+      "start_at_ms": 32600,
+      "end_at_ms": 33800,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Active Internet connections (servers and established)\nProto Recv-Q Send-Q  Local Address          Foreign Address        (state)\ntcp4       0      0  127.0.0.1.631          *.*                    LISTEN",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 30600,
+        "done_at_ms": 31800,
+        "level": "medium",
+        "reason": "Enumerates network listeners and ports.",
+        "key_points": ["Read-only", "May expose service metadata"],
+        "auto_approved": false
+      }
+    },
+    {
+      "id": "cmd-23",
+      "client": "octovalve-proxy",
+      "target": "macos-02",
+      "peer": "127.0.0.1",
+      "intent": "Check listening ports",
+      "mode": "shell",
+      "raw_command": "netstat -an | head -n 20",
+      "pipeline": [
+        { "argv": ["netstat", "-an"] },
+        { "argv": ["head", "-n", "20"] }
+      ],
+      "cwd": "/Users/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 34000,
+      "start_at_ms": 36000,
+      "end_at_ms": 37200,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Active Internet connections (servers and established)\nProto Recv-Q Send-Q  Local Address          Foreign Address        (state)\ntcp4       0      0  127.0.0.1.5900         *.*                    LISTEN",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 34000,
+        "done_at_ms": 35200,
+        "level": "medium",
+        "reason": "Enumerates network listeners and ports.",
+        "key_points": ["Read-only", "May expose service metadata"],
+        "auto_approved": false
+      }
+    },
+    {
+      "id": "cmd-24",
+      "client": "octovalve-proxy",
+      "target": "linux-01",
+      "peer": "127.0.0.1",
+      "intent": "Check listening ports",
+      "mode": "shell",
+      "raw_command": "ss -tulpen | head -n 20",
+      "pipeline": [
+        { "argv": ["ss", "-tulpen"] },
+        { "argv": ["head", "-n", "20"] }
+      ],
+      "cwd": "/home/ops",
+      "timeout_ms": 60000,
+      "max_output_bytes": 64000,
+      "queue_at_ms": 37400,
+      "start_at_ms": 39400,
+      "end_at_ms": 40800,
+      "status": "completed",
+      "exit_code": 0,
+      "stdout": "Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:Port Process\ntcp   LISTEN 0      128    0.0.0.0:22      0.0.0.0:*   users:(\"sshd\",pid=912)\nudp   UNCONN 0      0      127.0.0.1:323   0.0.0.0:*   users:(\"chronyd\",pid=630)",
+      "stderr": "",
+      "ai_risk": {
+        "pending_at_ms": 37400,
+        "done_at_ms": 38600,
+        "level": "medium",
+        "reason": "Enumerates network listeners and ports.",
+        "key_points": ["Read-only", "May expose service metadata"],
+        "auto_approved": false
+      }
+    }
+  ]
+}
